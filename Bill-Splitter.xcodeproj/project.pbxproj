@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		627C573222AC4F28006A87CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 627C573122AC4F28006A87CC /* AppDelegate.m */; };
-		627C573522AC4F28006A87CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627C573422AC4F28006A87CC /* ViewController.m */; };
 		627C573822AC4F29006A87CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 627C573622AC4F29006A87CC /* Main.storyboard */; };
 		627C573A22AC4F29006A87CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627C573922AC4F29006A87CC /* Assets.xcassets */; };
 		627C573D22AC4F29006A87CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 627C573B22AC4F29006A87CC /* LaunchScreen.storyboard */; };
 		627C574022AC4F29006A87CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 627C573F22AC4F29006A87CC /* main.m */; };
 		627C574A22AC4F2A006A87CC /* Bill_SplitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 627C574922AC4F2A006A87CC /* Bill_SplitterTests.m */; };
 		627C575522AC4F2A006A87CC /* Bill_SplitterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 627C575422AC4F2A006A87CC /* Bill_SplitterUITests.m */; };
+		627C576422AC54AB006A87CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627C576322AC54AB006A87CC /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,6 @@
 		627C572D22AC4F28006A87CC /* Bill-Splitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bill-Splitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		627C573022AC4F28006A87CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		627C573122AC4F28006A87CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		627C573322AC4F28006A87CC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		627C573422AC4F28006A87CC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		627C573722AC4F29006A87CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		627C573922AC4F29006A87CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		627C573C22AC4F29006A87CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		627C575022AC4F2A006A87CC /* Bill-SplitterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bill-SplitterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		627C575422AC4F2A006A87CC /* Bill_SplitterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bill_SplitterUITests.m; sourceTree = "<group>"; };
 		627C575622AC4F2A006A87CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		627C576222AC54AB006A87CC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		627C576322AC54AB006A87CC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +103,8 @@
 			children = (
 				627C573022AC4F28006A87CC /* AppDelegate.h */,
 				627C573122AC4F28006A87CC /* AppDelegate.m */,
-				627C573322AC4F28006A87CC /* ViewController.h */,
-				627C573422AC4F28006A87CC /* ViewController.m */,
+				627C576222AC54AB006A87CC /* ViewController.h */,
+				627C576322AC54AB006A87CC /* ViewController.m */,
 				627C573622AC4F29006A87CC /* Main.storyboard */,
 				627C573922AC4F29006A87CC /* Assets.xcassets */,
 				627C573B22AC4F29006A87CC /* LaunchScreen.storyboard */,
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627C573522AC4F28006A87CC /* ViewController.m in Sources */,
+				627C576422AC54AB006A87CC /* ViewController.m in Sources */,
 				627C574022AC4F29006A87CC /* main.m in Sources */,
 				627C573222AC4F28006A87CC /* AppDelegate.m in Sources */,
 			);

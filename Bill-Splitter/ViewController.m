@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
 @end
 
@@ -17,7 +17,73 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[self totalBillText] setDelegate: self];
+    self.totalBillText.clearsOnBeginEditing = YES;
+    self.totalBillText.keyboardType = UIKeyboardTypeDecimalPad;
+    self.splitSlider.value = roundf(2.0);
+    self.splitSliderValueButton.titleLabel.text = @"Split it 2 ways!";
+    
+
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)calculateSplitAmount:(id)sender {
+    
+    [self.totalBillText resignFirstResponder];
+    
+}
+
+- (IBAction)sliderValueChanged:(UISlider *)sender {
+
+    sender.value = roundf(sender.value);
+    float billTotal = [self.totalBillText.text floatValue];
+    float splitByNumber = sender.value;
+    float splitBill = billTotal/splitByNumber;
+    
+    self.splitSliderValueButton.titleLabel.text = [NSString stringWithFormat:@"Split it %.2f ways!", sender.value];
+    self.splitBillText.text = [NSString stringWithFormat: @"$%.2f Each", splitBill];
+    
+}
+
+-           (BOOL)textField:(UITextField *)textField
+   shouldChangeCharactersInRange:(NSRange)range
+           replacementString:(NSString *)text
+{
+    
+    if( (char)text == 8){
+        return YES;
+    }
+    
+    NSCharacterSet *numbersOnlySet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789."];
+    
+    NSCharacterSet *intextFieldSet = [NSCharacterSet characterSetWithCharactersInString:text];
+    
+    BOOL stringIsValid = [numbersOnlySet isSupersetOfSet:intextFieldSet];
+    
+    NSRange range2 = [textField.text rangeOfString: @"." options:0];
+    
+    if(range2.location != NSNotFound)
+    {
+        NSUInteger trailingDigits = [textField.text length] - range2.location;
+        NSLog(@"%lu", trailingDigits);
+        if ([text isEqualToString:@"."]) {
+            stringIsValid = NO;
+        } else if (trailingDigits > 2) {
+            stringIsValid = NO;
+        }
+        
+    }
+    
+    return stringIsValid;
+}
 
 @end

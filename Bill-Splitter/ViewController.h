@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *totalBillText;
+@property (weak, nonatomic) IBOutlet UISlider *splitSlider;
+@property (weak, nonatomic) IBOutlet UILabel *splitBillText;
+@property (weak, nonatomic) IBOutlet UIButton *splitSliderValueButton;
+
+- (IBAction)calculateSplitAmount:(UIButton *)sender;
+- (IBAction)sliderValueChanged:(UISlider *)sender;
 
 @end
 
+NS_ASSUME_NONNULL_END
