@@ -20,10 +20,8 @@
     [[self totalBillText] setDelegate: self];
     self.totalBillText.clearsOnBeginEditing = YES;
     self.totalBillText.keyboardType = UIKeyboardTypeDecimalPad;
-    self.splitSlider.value = roundf(2.0);
-    self.splitSliderValueButton.titleLabel.text = @"Split it 2 ways!";
-    
-
+    self.splitSlider.value = roundf(4.0);
+    self.splitBillText.text = [NSString stringWithFormat: @"$50.00 split 4 ways"];
 }
 
 /*
@@ -36,21 +34,15 @@
 }
 */
 
-- (IBAction)calculateSplitAmount:(id)sender {
+- (IBAction)sliderValueChanged:(UISlider *)sender {
     
     [self.totalBillText resignFirstResponder];
-    
-}
-
-- (IBAction)sliderValueChanged:(UISlider *)sender {
-
     sender.value = roundf(sender.value);
     float billTotal = [self.totalBillText.text floatValue];
     float splitByNumber = sender.value;
     float splitBill = billTotal/splitByNumber;
     
-    self.splitSliderValueButton.titleLabel.text = [NSString stringWithFormat:@"Split it %.2f ways!", sender.value];
-    self.splitBillText.text = [NSString stringWithFormat: @"$%.2f Each", splitBill];
+    self.splitBillText.text = [NSString stringWithFormat: @"$%.2f split %.f ways", splitBill, sender.value];
     
 }
 

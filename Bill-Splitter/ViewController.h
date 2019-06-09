@@ -15,9 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *totalBillText;
 @property (weak, nonatomic) IBOutlet UISlider *splitSlider;
 @property (weak, nonatomic) IBOutlet UILabel *splitBillText;
-@property (weak, nonatomic) IBOutlet UIButton *splitSliderValueButton;
+@property (weak, nonatomic) IBOutlet UILabel *sliderValueLabel;
 
-- (IBAction)calculateSplitAmount:(UIButton *)sender;
 - (IBAction)sliderValueChanged:(UISlider *)sender;
 
 @end
