@@ -20,9 +20,19 @@
     [[self totalBillText] setDelegate: self];
     self.totalBillText.clearsOnBeginEditing = YES;
     self.totalBillText.keyboardType = UIKeyboardTypeDecimalPad;
-    self.splitSlider.value = roundf(4.0);
-    self.splitBillText.text = [NSString stringWithFormat: @"$50.00 each"];
+    self.splitSlider.value = roundf(self.splitSlider.minimumValue);
+    self.splitBillText.text = [NSString stringWithFormat: @"$100.00 each"];
+    self.sliderValueLabel.text = [NSString stringWithFormat: @"%.f", self.splitSlider.value];
     
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    CGFloat xPos = 33;
+    CGPoint thisCenter = CGPointMake(xPos, self.sliderValueLabel.center.y);
+    
+    [self.sliderValueLabel setCenter: thisCenter];
     
 }
 
@@ -54,11 +64,6 @@
     CGPoint thisCenter = CGPointMake(xPos, self.sliderValueLabel.center.y);
     
     [self.sliderValueLabel setCenter: thisCenter];
-
-    NSLog(@"%f", sliderWidth);
-    NSLog(@"%f", diff);
-    NSLog(@"%f", xPos);
-    
     
 }
 
