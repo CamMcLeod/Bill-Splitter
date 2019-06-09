@@ -21,7 +21,9 @@
     self.totalBillText.clearsOnBeginEditing = YES;
     self.totalBillText.keyboardType = UIKeyboardTypeDecimalPad;
     self.splitSlider.value = roundf(4.0);
-    self.splitBillText.text = [NSString stringWithFormat: @"$50.00 split 4 ways"];
+    self.splitBillText.text = [NSString stringWithFormat: @"$50.00 each"];
+    
+    
 }
 
 /*
@@ -41,8 +43,22 @@
     float billTotal = [self.totalBillText.text floatValue];
     float splitByNumber = sender.value;
     float splitBill = billTotal/splitByNumber;
+    self.sliderValueLabel.text = [NSString stringWithFormat: @"%.f", sender.value];
+    self.splitBillText.text = [NSString stringWithFormat: @"$%.2f each", splitBill];
+
+    CGFloat sliderWidth = CGRectGetMaxX(self.splitSlider.frame);
+    CGFloat diff = (sender.value-sender.minimumValue)/(sender.maximumValue-sender.minimumValue);
     
-    self.splitBillText.text = [NSString stringWithFormat: @"$%.2f split %.f ways", splitBill, sender.value];
+    //357
+    CGFloat xPos = 33 + (sliderWidth-50)*diff;
+    CGPoint thisCenter = CGPointMake(xPos, self.sliderValueLabel.center.y);
+    
+    [self.sliderValueLabel setCenter: thisCenter];
+
+    NSLog(@"%f", sliderWidth);
+    NSLog(@"%f", diff);
+    NSLog(@"%f", xPos);
+    
     
 }
 
